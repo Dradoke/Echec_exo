@@ -12,6 +12,7 @@ class Cavalier extends PieceEchecs {
     
     
     public function peutAllerA($x, $y){
+        // Determine si le pion est sur le jeu
         if ($x < 1 || $x > 8 || $y < 1 || $y > 8) {
            return false;
         }
