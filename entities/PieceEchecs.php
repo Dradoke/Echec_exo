@@ -8,11 +8,11 @@ class PieceEchecs
     private $couleur;
 
 
-    public function __construct(int $x, int $y, Couleurs $couleur){
+    public function __construct(int $x, int $y, Couleur $couleur){
 
         $this->setX($x);
         $this->setY($y);
-        
+        $this->setCouleur($couleur);
         
     }
 
