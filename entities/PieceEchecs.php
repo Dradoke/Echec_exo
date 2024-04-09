@@ -1,19 +1,21 @@
 <?php
 
+require_once './util/Couleurs.php';
+
 class PieceEchecs
 {
 
     private $x;
     private $y;
-    private $couleur;
+    private $couleur = [1,2];
 
 
-    public function __construct(int $x, int $y, Couleur $couleur){
+    public function __construct(int $x, int $y, string $couleur){
 
         $this->setX($x);
         $this->setY($y);
         $this->setCouleur($couleur);
-        
+       
     }
 
 
@@ -76,4 +78,17 @@ class PieceEchecs
 
         return $this;
     }
+
+
+   public function getCouleurCase()
+   {
+
+    if (($this->x + $this->y)%2 == 1) {
+        echo 'case blanche (impair)';
+    } else {
+        echo 'case noire (pair)';
+    }
+
+   }
+
 }
