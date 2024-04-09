@@ -4,7 +4,7 @@ class Cavalier extends PieceEchecs {
     
 
     
-    public function __construct(int $x, int $y, Couleur $couleur)
+    public function __construct(int $x, int $y, string $couleur)
     {
         parent::__construct($x, $y, $couleur);
 
