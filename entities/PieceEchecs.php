@@ -7,7 +7,7 @@ class PieceEchecs
 
     private $x;
     private $y;
-    private $couleur = [1,2];
+    private $couleur;
 
 
     public function __construct(int $x, int $y, string $couleur){
