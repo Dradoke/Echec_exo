@@ -10,8 +10,8 @@ require_once './entities/Pion.php';
 require_once './entities/Roi.php';
 
 
-$cavalier = new PieceEchecs(2, 2, Couleurs::BLANC);
+$cavalier = new Cavalier(1, 1, Couleurs::BLANC);
 
-echo $cavalier->getCouleurCase();
 
+echo $cavalier;
 

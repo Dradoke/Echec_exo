@@ -19,4 +19,10 @@ class Cavalier extends PieceEchecs {
         $dy = abs($this->getY() - $y);
         return $dx == 2 && $dy == 1 || $dx == 1 && $dy == 2;
     }
+
+    public function __toString()
+    {
+        return 'Je suis un Cavalier et je me trouve en : (x:' .$this->getX() . "), (y: " . $this->getY() . ") et je suis de couleur : (" . $this->getCouleur() . ')';
+    }
+
 }

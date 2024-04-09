@@ -15,5 +15,8 @@ class Fou extends PieceEchecs {
         return abs($this->getX() - $x) == abs($this->getY() - $y) && $x >= 1 && $x <= 8 && $y >= 1 && $y <= 8;
     }
     
-
+    public function __toString()
+    {
+        return 'Je suis un Fou et je me trouve en : (x:' .$this->getX() . "), (y: " . $this->getY() . ") et je suis de couleur : (" . $this->getCouleur() . ')';
+    }
 }
