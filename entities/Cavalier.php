@@ -2,17 +2,21 @@
 
 class Cavalier extends PieceEchecs {
     
-    public function __construct()
+
+    
+    public function __construct(int $x, int $y, Couleur $couleur)
     {
-        parent::__construct();
+        parent::__construct($x, $y, $couleur);
 
     }
     
     
-    public function peutAllerA(){
-        // from 'point de départ'
-        // $x $x $y || $x $x -$y || $y $y $x || $y $y -$x
-        // sauf si 'piece de meme couleur sur la case'
-        // sauf si la piece sort du jeu
+    public function peutAllerA($x, $y){
+        if ($x < 1 || $x > 8 || $y < 1 || $y > 8) {
+           return false;
+        }
+        $dx = abs($this->getX() - $x);
+        $dy = abs($this->getY() - $y);
+        return $dx == 2 && $dy == 1 || $dx == 1 && $dy == 2;
     }
 }
