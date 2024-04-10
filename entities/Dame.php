@@ -18,15 +18,13 @@ class Dame extends PieceEchecs {
         }
         $dx = abs($this->getX() - $x);
         $dy = abs($this->getY() - $y);
-        for ($i=0; $i < 8; $i++) { 
-            return $dx == 1 && $dy == 1 || $dx == 1 && $dy == 2;
-            
-        }
+    
+        return $dx == $dy || $dy == 0 || $dy == 0;
     }
 
     public function __toString()
     {
-        return 'Je suis un Cavalier et je me trouve en : (x:' .$this->getX() . "), (y: " . $this->getY() . ") et je suis de couleur : (" . $this->getCouleur() . ')';
+        return 'Je suis une Dame et je me trouve en : (x:' .$this->getX() . "), (y: " . $this->getY() . ") et je suis de couleur : (" . $this->getCouleur() . ')';
     }
 
 }
