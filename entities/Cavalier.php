@@ -12,12 +12,10 @@ class Cavalier extends PieceEchecs {
     
     
     public function peutAllerA($x, $y){
-        if ($x < 1 || $x > 8 || $y < 1 || $y > 8) {
-           return false;
-        }
         $dx = abs($this->x - $x);
         $dy = abs($this->y - $y);
-        return $dx == 2 && $dy == 1 || $dx == 1 && $dy == 2;
+        return ($dx == 2 && $dy == 1 || $dx == 1 && $dy == 2) && ($this->estDansEchiquier($x,$y));
+        
     }
 
     public function __toString()

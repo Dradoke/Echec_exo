@@ -89,13 +89,12 @@ class PieceEchecs
 
    public function getCouleurCase()
    {
+    return (($this->x + $this->y)%2 == 1 ? Couleurs::Blanche->value : Couleurs::Noire->value);
+   }
 
-    if (($this->x + $this->y)%2 == 1) {
-        echo 'case blanche (impair)';
-    } else {
-        echo 'case noire (pair)';
-    }
-
+   public function estDansEchiquier($x, $y)
+   {
+     return (($y >=1) && ($y <=8) && ($x >=1) && ($x <=8));
    }
 
 }

@@ -10,8 +10,12 @@ require_once './entities/Pion.php';
 require_once './entities/Roi.php';
 
 
-$fou = new Fou(1, 1, Couleurs::Blanche);
+$cavalier = new Cavalier(8, 8, Couleurs::Blanche);
 
+if ($cavalier->peutAllerA(6,7)) {
+    echo 'Le cavalier peut aller ici';
+} else{
+    echo 'Cette case n\'est pas accessible';
+}
 
-echo $fou;
 

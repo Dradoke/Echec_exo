@@ -1,4 +1,6 @@
 <?php
+require_once './entities/PieceEchecs.php';
+
 
 class Fou extends PieceEchecs {
     
@@ -12,7 +14,7 @@ class Fou extends PieceEchecs {
 
     
     function peutAllerA($x, $y) {
-        return abs($this->x - $x) == abs($this->y - $y) && $x >= 1 && $x <= 8 && $y >= 1 && $y <= 8;
+        return abs($this->x - $x) == abs($this->y - $y) && ($this->estDansEchiquier($x,$y));
     }
     
     public function __toString()
