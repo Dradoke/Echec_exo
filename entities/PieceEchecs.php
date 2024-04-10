@@ -1,5 +1,7 @@
 <?php
 
+require_once './util/Couleurs.php';
+
 class PieceEchecs
 {
 
@@ -8,12 +10,12 @@ class PieceEchecs
     protected $couleur;
 
 
-    public function __construct(int $x, int $y, Couleur $couleur){
+    public function __construct(int $x, int $y, Couleurs $couleur){
 
         $this->setX($x);
         $this->setY($y);
         $this->setCouleur($couleur);
-        
+       
     }
 
 
@@ -22,7 +24,8 @@ class PieceEchecs
      */ 
     public function getCouleur()
     {
-        return $this->couleur;
+
+        return $this->couleur->value;
     }
 
     /**
@@ -30,7 +33,7 @@ class PieceEchecs
      *
      * @return  self
      */ 
-    public function setCouleur($couleur)
+    public function setCouleur(Couleurs $couleur)
     {
         $this->couleur = $couleur;
 
@@ -50,7 +53,7 @@ class PieceEchecs
      *
      * @return  self
      */ 
-    public function setY($y)
+    public function setY(int $y)
     {
         if ($y >= 1 && $y <=8) {
             $this->y = $y;
@@ -73,7 +76,7 @@ class PieceEchecs
      *
      * @return  self
      */ 
-    public function setX($x)
+    public function setX(int $x)
     {
         if ($x >= 1 && $x <=8) {
             $this->x = $x;
@@ -82,4 +85,16 @@ class PieceEchecs
             
         }
     }
+
+
+   public function getCouleurCase()
+   {
+    return (($this->x + $this->y)%2 == 1 ? Couleurs::Blanche->value : Couleurs::Noire->value);
+   }
+
+   public function estDansEchiquier($x, $y)
+   {
+     return (($y >=1) && ($y <=8) && ($x >=1) && ($x <=8));
+   }
+
 }
