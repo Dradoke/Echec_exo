@@ -10,8 +10,8 @@ require_once './entities/Pion.php';
 require_once './entities/Roi.php';
 
 
-$cavalier = new Cavalier(1, 1, Couleurs::BLANC);
+$fou = new Fou(1, 1, Couleurs::Blanche);
 
 
-echo $cavalier;
+echo $fou;
 

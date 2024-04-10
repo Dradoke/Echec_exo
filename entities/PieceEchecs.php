@@ -10,7 +10,7 @@ class PieceEchecs
     protected $couleur;
 
 
-    public function __construct(int $x, int $y, string $couleur){
+    public function __construct(int $x, int $y, Couleurs $couleur){
 
         $this->setX($x);
         $this->setY($y);
@@ -24,7 +24,8 @@ class PieceEchecs
      */ 
     public function getCouleur()
     {
-        return $this->couleur;
+
+        return $this->couleur->value;
     }
 
     /**

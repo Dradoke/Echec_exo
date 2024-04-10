@@ -1,9 +1,10 @@
 <?php
 
-class Couleurs{
+enum Couleurs : string
+{
 
-    public const BLANC = 'blanc';
-    public const NOIRE = 'noire';
+    case Blanche = 'Blanche' ;
+    case Noire = 'Noire';
 }
 
 ?>
