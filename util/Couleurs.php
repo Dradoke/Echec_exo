@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 
 enum Couleurs : string
@@ -8,3 +10,7 @@ enum Couleurs : string
 }
 
 ?>
+=======
+>>>>>>> Cavalier
+=======
+>>>>>>> Fou
