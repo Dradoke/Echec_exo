@@ -33,7 +33,7 @@ class PieceEchecs
      *
      * @return  self
      */ 
-    public function setCouleur($couleur)
+    public function setCouleur(Couleurs $couleur)
     {
         $this->couleur = $couleur;
 
@@ -53,7 +53,7 @@ class PieceEchecs
      *
      * @return  self
      */ 
-    public function setY($y)
+    public function setY(int $y)
     {
         if ($y >= 1 && $y <=8) {
             $this->y = $y;
@@ -76,7 +76,7 @@ class PieceEchecs
      *
      * @return  self
      */ 
-    public function setX($x)
+    public function setX(int $x)
     {
         if ($x >= 1 && $x <=8) {
             $this->x = $x;
