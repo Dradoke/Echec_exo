@@ -4,11 +4,11 @@ class Dame extends PieceEchecs {
     
 
     
-    public function __construct(int $x, int $y, string $couleur)
-    {
-        parent::__construct($x, $y, $couleur);
+    // public function __construct(int $x, int $y, string $couleur)
+    // {
+    //     parent::__construct($x, $y, $couleur);
 
-    }
+    // }
     
     
     public function peutAllerA($x, $y){
