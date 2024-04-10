@@ -3,9 +3,9 @@
 class PieceEchecs
 {
 
-    private $x;
-    private $y;
-    private $couleur;
+    protected $x;
+    protected $y;
+    protected $couleur;
 
 
     public function __construct(int $x, int $y, Couleur $couleur){
@@ -52,9 +52,12 @@ class PieceEchecs
      */ 
     public function setY($y)
     {
-        $this->y = $y;
-
-        return $this;
+        if ($y >= 1 && $y <=8) {
+            $this->y = $y;
+        } else {
+            throw new Exception("La case $y n'existe pas sur l'échiquier");
+            
+        }
     }
 
     /**
@@ -72,8 +75,11 @@ class PieceEchecs
      */ 
     public function setX($x)
     {
-        $this->x = $x;
-
-        return $this;
+        if ($x >= 1 && $x <=8) {
+            $this->x = $x;
+        } else {
+            throw new Exception("La case $x n'existe pas sur l'échiquier");
+            
+        }
     }
 }
