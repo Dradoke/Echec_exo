@@ -2,15 +2,15 @@
 
 require_once './util/Couleurs.php';
 
-class PieceEchecs
+abstract class PieceEchecs
 {
 
-    private $x;
-    private $y;
-    private $couleur;
+    protected $x;
+    protected $y;
+    protected $couleur;
 
 
-    public function __construct(int $x, int $y, string $couleur){
+    public function __construct(int $x, int $y, Couleurs $couleur){
 
         $this->setX($x);
         $this->setY($y);
@@ -24,7 +24,8 @@ class PieceEchecs
      */ 
     public function getCouleur()
     {
-        return $this->couleur;
+
+        return $this->couleur->value;
     }
 
     /**
@@ -32,7 +33,7 @@ class PieceEchecs
      *
      * @return  self
      */ 
-    public function setCouleur($couleur)
+    public function setCouleur(Couleurs $couleur)
     {
         $this->couleur = $couleur;
 
@@ -52,11 +53,14 @@ class PieceEchecs
      *
      * @return  self
      */ 
-    public function setY($y)
+    public function setY(int $y)
     {
-        $this->y = $y;
-
-        return $this;
+        if ($y >= 1 && $y <=8) {
+            $this->y = $y;
+        } else {
+            throw new Exception("La case $y n'existe pas sur l'échiquier");
+            
+        }
     }
 
     /**
@@ -72,23 +76,31 @@ class PieceEchecs
      *
      * @return  self
      */ 
-    public function setX($x)
+    public function setX(int $x)
     {
-        $this->x = $x;
-
-        return $this;
+        if ($x >= 1 && $x <=8) {
+            $this->x = $x;
+        } else {
+            throw new Exception("La case $x n'existe pas sur l'échiquier");
+            
+        }
     }
 
 
    public function getCouleurCase()
    {
-
-    if (($this->x + $this->y)%2 == 1) {
-        echo 'case blanche (impair)';
-    } else {
-        echo 'case noire (pair)';
-    }
-
+    return (($this->x + $this->y)%2 == 1 ? Couleurs::Blanche->value : Couleurs::Noire->value);
    }
 
+   public function estDansEchiquier($x, $y)
+   {
+     return (($y >=1) && ($y <=8) && ($x >=1) && ($x <=8));
+   }
+
+   public function __toString()
+    {
+        return 'Je suis un ' . get_class($this) .' et je me trouve en : (x:' .$this->x . "), (y: " . $this->y . ") et je suis de couleur : (" . $this->couleur->value . ')';
+    }
+
+   abstract public function peutAllerA($x,$y);
 }
