@@ -22,6 +22,9 @@ class Dame extends PieceEchecs {
         return $dx == $dy || $dy == 0 || $dy == 0;
     }
 
-    
+    public function __toString()
+    {
+        return 'Je suis une Dame et je me trouve en : (x:' .$this->getX() . "), (y: " . $this->getY() . ") et je suis de couleur : (" . $this->getCouleur() . ')';
+    }
 
 }
