@@ -8,12 +8,13 @@ require_once './entities/Dame.php';
 require_once './entities/Fou.php';
 require_once './entities/Pion.php';
 require_once './entities/Roi.php';
+require_once './entities/Tour.php';
 
 
-$cavalier = new Cavalier(8, 8, Couleurs::Blanche);
+$tour = new Tour(1, 1, Couleurs::Blanche);
 
-if ($cavalier->peutAllerA(6,7)) {
-    echo 'Le cavalier peut aller ici';
+if ($tour->peutAllerA(9,1)) {
+    echo 'Le tour peut aller ici';
 } else{
     echo 'Cette case n\'est pas accessible';
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Dame extends PieceEchecs {
+class Roi extends PieceEchecs {
     
 
     
