@@ -2,7 +2,7 @@
 
 require_once './util/Couleurs.php';
 
-class PieceEchecs
+abstract class PieceEchecs
 {
 
     protected $x;
@@ -97,4 +97,5 @@ class PieceEchecs
      return (($y >=1) && ($y <=8) && ($x >=1) && ($x <=8));
    }
 
+   abstract public function peutAllerA($x,$y);
 }
