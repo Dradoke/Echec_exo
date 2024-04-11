@@ -16,8 +16,8 @@ class Roi extends PieceEchecs {
         if ($x < 1 || $x > 8 || $y < 1 || $y > 8) {
            return false;
         }
-        $dx = abs($this->getX() - $x);
-        $dy = abs($this->getY() - $y);
+        $dx = abs($this->x - $x);
+        $dy = abs($this->y - $y);
     
         return $dx == 1 && $dy == 1 || $dy == 1 || $dy == 1;
     }
