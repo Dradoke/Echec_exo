@@ -22,9 +22,6 @@ class Roi extends PieceEchecs {
         return $dx == 1 && $dy == 1 || $dy == 1 || $dy == 1;
     }
 
-    public function __toString()
-    {
-        return 'Je suis un Roi et je me trouve en : (x:' .$this->getX() . "), (y: " . $this->getY() . ") et je suis de couleur : (" . $this->getCouleur() . ')';
-    }
+   
 
 }

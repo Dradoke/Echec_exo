@@ -18,9 +18,6 @@ class Cavalier extends PieceEchecs {
         
     }
 
-    public function __toString()
-    {
-        return 'Je suis un Cavalier et je me trouve en : (x:' .$this->x . "), (y: " . $this->y . ") et je suis de couleur : (" . $this->couleur->value . ')';
-    }
+
 
 }

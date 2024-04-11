@@ -11,10 +11,13 @@ require_once './entities/Roi.php';
 require_once './entities/Tour.php';
 
 
-$tour = new Tour(1, 1, Couleurs::Blanche);
+$tour = new Pion(1, 1, Couleurs::Blanche);
 
 if ($tour->peutAllerA(9,1)) {
     echo 'Le tour peut aller ici';
 } else{
     echo 'Cette case n\'est pas accessible';
 }
+
+echo '<br>';
+echo $tour;

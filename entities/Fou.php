@@ -17,8 +17,4 @@ class Fou extends PieceEchecs {
         return abs($this->x - $x) == abs($this->y - $y) && ($this->estDansEchiquier($x,$y));
     }
     
-    public function __toString()
-    {
-        return 'Je suis un Fou et je me trouve en : (x:' .$this->x . "), (y: " . $this->y. ") et je suis de couleur : (" . $this->couleur->value . ')';
-    }
 }
