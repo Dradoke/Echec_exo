@@ -97,5 +97,10 @@ abstract class PieceEchecs
      return (($y >=1) && ($y <=8) && ($x >=1) && ($x <=8));
    }
 
+   public function __toString()
+    {
+        return 'Je suis un ' . get_class($this) .' et je me trouve en : (x:' .$this->x . "), (y: " . $this->y . ") et je suis de couleur : (" . $this->couleur->value . ')';
+    }
+
    abstract public function peutAllerA($x,$y);
 }
